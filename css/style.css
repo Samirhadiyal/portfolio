@@ -1079,6 +1079,12 @@ section { position: relative; }
   .project-card { grid-template-columns: 260px 1fr; }
   .achieve-card { grid-template-columns: 250px 1fr; }
   .achievements-stats { grid-template-columns: repeat(2, 1fr); }
+
+  /* Bento grid — stack photo above text */
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-photo { grid-column: auto; grid-row: auto; max-height: 400px; }
+  .bento-photo img { max-height: 400px; }
+  .bento-text { grid-column: auto; grid-row: auto; }
 }
 
 @media (max-width: 768px) {
@@ -1094,6 +1100,7 @@ section { position: relative; }
   .hero-intro { font-size: 0.92rem; }
 
   /* Nav mobile */
+  .navbar-inner { padding: 0 24px; }
   .nav-links {
     position: fixed; top: 70px; left: 0; right: 0; bottom: 0;
     background: var(--bg-primary); flex-direction: column;
@@ -1105,6 +1112,9 @@ section { position: relative; }
   .nav-links a { font-size: 1rem; padding: 14px 16px; width: 100%; border-radius: 12px; }
   .nav-hamburger { display: flex; }
   .theme-switcher { margin-left: 0; }
+
+  /* Container padding reduction */
+  .container { padding: 0 24px; }
 
   /* Stack layouts */
   .exp-card { grid-template-columns: 1fr; }
@@ -1121,6 +1131,26 @@ section { position: relative; }
 
   .hero-cta { flex-direction: column; align-items: center; }
   .btn { width: 100%; justify-content: center; max-width: 300px; }
+
+  /* Padding reductions for cards & panels */
+  .bento-photo { max-height: 300px; }
+  .bento-photo img { max-height: 300px; }
+  .bento-box { padding: 28px; }
+  .bento-box h3 { font-size: 1.5rem; }
+  .exp-card-left { padding: 28px; }
+  .exp-card-right { padding: 28px; }
+  .project-left { padding: 28px; }
+  .project-right { padding: 28px; }
+  .project-name { font-size: 1.5rem; }
+  .skill-category { padding: 28px; }
+  .edu-card { padding: 32px; grid-template-columns: 80px 1fr; gap: 20px; }
+  .cert-preview { height: 200px; }
+  .contact-form-panel { padding: 28px; }
+  .contact-info-panel { padding: 28px; }
+  .contact-row { padding: 12px 16px; }
+  .cert-modal { padding: 16px; }
+  .cert-modal-content { height: 90vh; border-radius: 20px; }
+  .footer { padding: 48px 0; }
 }
 
 @media (max-width: 480px) {
@@ -1130,6 +1160,91 @@ section { position: relative; }
   .section-title { font-size: 1.5rem; }
   .achievements-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
   .stat-number { font-size: 2rem; }
+
+  /* Hero scaling for small phones */
+  .hero-title { font-size: 2.2rem; letter-spacing: -1px; margin-bottom: 32px; }
+  .hero-badge { font-size: 0.85rem; padding: 8px 18px; }
+  .hero-graphic { max-width: 280px; }
+  .hero-graphic-container { height: 260px; border-radius: 24px; }
+  .hero-cta .btn { padding: 14px 28px; font-size: 0.92rem; }
+  .social-icon { width: 42px; height: 42px; }
+  .social-icon svg { width: 18px; height: 18px; }
+
+  /* About section */
+  .bento-photo { max-height: 250px; }
+  .bento-photo img { max-height: 250px; }
+  .bento-box { padding: 20px; }
+  .bento-box h3 { font-size: 1.4rem; }
+  .bento-box p { font-size: 0.95rem; }
+
+  /* Experience cards */
+  .exp-card-left { padding: 20px; }
+  .exp-card-right { padding: 20px; }
+  .exp-role { font-size: 1.15rem; }
+  .exp-company { font-size: 0.95rem; }
+  .exp-list li { font-size: 0.9rem; }
+
+  /* Project cards */
+  .project-left { padding: 20px; }
+  .project-right { padding: 20px; }
+  .project-name { font-size: 1.3rem; }
+  .project-desc { font-size: 0.92rem; margin-bottom: 24px; }
+  .project-outcome { padding: 14px; border-radius: 16px; }
+  .outcome-num { width: 28px; height: 28px; min-width: 28px; font-size: 0.75rem; border-radius: 8px; }
+  .outcome-text { font-size: 0.88rem; }
+  .project-outcomes { gap: 12px; margin-bottom: 24px; }
+  .project-link { padding: 10px 20px; font-size: 0.82rem; }
+  .tech-pill { padding: 6px 14px; font-size: 0.8rem; }
+
+  /* Skills */
+  .skill-category { padding: 24px; }
+  .skill-cat-title { font-size: 1.1rem; }
+  .skill-cat-icon { width: 36px; height: 36px; border-radius: 10px; }
+  .skill-cat-icon svg { width: 18px; height: 18px; }
+  .skill-tag { padding: 10px 16px; font-size: 0.85rem; }
+  .skill-cat-subtitle { font-size: 0.85rem; margin-bottom: 24px; }
+
+  /* Education */
+  .edu-card { grid-template-columns: 1fr; padding: 24px; }
+  .edu-icon { width: 60px; height: 60px; border-radius: 16px; }
+  .edu-icon svg { width: 32px; height: 32px; }
+  .edu-degree { font-size: 1.25rem; }
+  .edu-school { font-size: 0.95rem; margin-bottom: 16px; }
+  .edu-highlight { font-size: 0.85rem; }
+
+  /* Certifications */
+  .cert-preview { height: 180px; }
+  .cert-info { padding: 24px; }
+  .cert-name { font-size: 1.1rem; }
+  .cert-provider { font-size: 0.72rem; }
+  .cert-year { font-size: 0.85rem; }
+
+  /* Contact */
+  .contact-form-panel { padding: 20px; }
+  .contact-info-panel { padding: 20px; }
+  .contact-info-title { font-size: 1.25rem; }
+  .contact-info-sub { font-size: 0.88rem; margin-bottom: 24px; }
+  .contact-row { padding: 12px 14px; gap: 14px; }
+  .contact-row-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 10px; }
+  .contact-row-icon svg { width: 20px; height: 20px; }
+  .contact-row-value { font-size: 0.92rem; }
+  .contact-row-label { font-size: 0.72rem; }
+  .btn-send { padding: 14px 28px; font-size: 0.88rem; }
+
+  /* Section labels & subtitles */
+  .section-label { font-size: 0.72rem; padding: 6px 16px; }
+  .section-subtitle { font-size: 0.95rem; }
+
+  /* Footer */
+  .footer { padding: 40px 0; }
+  .footer-name { font-size: 1.4rem; }
+  .footer-tagline { font-size: 0.92rem; margin: 0 auto 24px; }
+  .footer-socials { margin-bottom: 24px; }
+  .footer-copy { font-size: 0.78rem; }
+
+  /* Navbar */
+  .navbar-inner { padding: 0 16px; }
+  .nav-logo { font-size: 1.4rem; }
 }
 
 /* ── MISC UTILITIES ────────────────────────────────────────── */
